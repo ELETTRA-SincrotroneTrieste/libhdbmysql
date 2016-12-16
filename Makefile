@@ -1,7 +1,14 @@
+OMNI_INC = /usr/local/omniorb-4.2.1/include
+TANGO_INC = /usr/local/tango-9.2.2/include/tango
+ZEROMQ_INC = /usr/local/zeromq-4.0.7/include
 
-include ../../Make-hdb++.in
+LIBHDB_INC = libhdbpp/src
 
-CXXFLAGS += -Wall -DRELEASE='"$HeadURL: svn+ssh://scalamera@svn.code.sf.net/p/tango-cs/code/archiving/hdb++/libhdbmysql/trunk/Makefile $ "' $(DBIMPL_INC) -I$(TANGO_INC) -I$(OMNI_INC)  -I$(ZEROMQ_INC) -I$(LIBHDB_INC)
+DBIMPL_INC = `mysql_config --include`
+DBIMPL_LIB = `mysql_config --libs_r`
+
+
+CXXFLAGS += -std=gnu++0x -ggdb3 -Wall -DRELEASE='"$HeadURL: svn+ssh://scalamera@svn.code.sf.net/p/tango-cs/code/archiving/hdb++/libhdb++mysql/trunk/Makefile $ "' $(DBIMPL_INC) -I$(TANGO_INC) -I$(OMNI_INC) -I$(ZEROMQ_INC) -I$(LIBHDB_INC)
 CXX = g++
 
 
@@ -15,9 +22,9 @@ SHLIB_SUFFIX = so
 
 #  release numbers for libraries
 #
- LIBVERSION    = 5
+ LIBVERSION    = 4
  LIBRELEASE    = 0
- LIBSUBRELEASE = 0
+ LIBSUBRELEASE = 2
 #
 
 LIBRARY       = $(BASELIBNAME).a
