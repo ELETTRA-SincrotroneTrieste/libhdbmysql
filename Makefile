@@ -22,9 +22,9 @@ SHLIB_SUFFIX = so
 
 #  release numbers for libraries
 #
- LIBVERSION    = 4
+ LIBVERSION    = 5
  LIBRELEASE    = 0
- LIBSUBRELEASE = 2
+ LIBSUBRELEASE = 0
 #
 
 LIBRARY       = $(BASELIBNAME).a
